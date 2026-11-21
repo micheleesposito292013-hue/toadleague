@@ -1,0 +1,10 @@
+# The site's source (a Vite + React + Tailwind app using npm) is committed as a
+# zip archive rather than as plain files, so the build unpacks it into `app/`,
+# installs dependencies from its lockfile, and runs the Vite build there.
+[build]
+  command = "unzip -o -q toadmaiu-league-website-development.zip -d app && cd app && npm ci && npm run build"
+  publish = "app/dist"
+
+[build.environment]
+  # Vite 7 requires Node 20.19+ or 22.12+
+  NODE_VERSION = "24"
